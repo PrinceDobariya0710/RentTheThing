@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface subCategoryRepo extends JpaRepository<subCategory,Integer> {
 
-    @Query(value = "select * from sub_category where sub_category_name=?1")
-    List<subCategory> getsubcategoryData(String name);
+    @Query(value = "select * from sub_category where sub_category_name=?1",nativeQuery = true)
+    List<subCategory> getsubcategoryData(String category);
 }
