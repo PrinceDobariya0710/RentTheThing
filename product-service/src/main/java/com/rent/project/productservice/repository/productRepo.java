@@ -11,7 +11,7 @@ public interface productRepo extends JpaRepository<product,Integer> {
     @Query(value = "select * from product where user_id=?1",nativeQuery = true)
     List<product> fetchUserProduct(Integer id);
 
-    @Query(value = "select * from product where sub_category=?1",nativeQuery = true)
-    List<product> fetchCategoryProduct(String category);
+    @Query(value = "select * from product where subcategory_id=?1",nativeQuery = true)
+    List<product> fetchCategoryProduct(Integer id);
 
 }
