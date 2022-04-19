@@ -1,9 +1,9 @@
 package com.rent.project.productservice.services;
 
-import com.rent.project.productservice.models.product;
-import com.rent.project.productservice.repository.categoryRepo;
-import com.rent.project.productservice.repository.productRepo;
-import com.rent.project.productservice.repository.subCategoryRepo;
+import com.rent.project.productservice.models.Product;
+import com.rent.project.productservice.repository.CategoryRepo;
+import com.rent.project.productservice.repository.ProductRepo;
+import com.rent.project.productservice.repository.SubCategoryRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -11,23 +11,23 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class productService {
+public class ProductService {
     @Autowired
-    categoryRepo categoryrepo;
+    CategoryRepo categoryrepo;
 
     @Autowired
-    subCategoryRepo subcategoryRepo;
+    SubCategoryRepo subcategoryRepo;
 
     @Autowired
-    productRepo productrepo;
+    ProductRepo productrepo;
 
-    public ResponseEntity<product> addProduct(product Product)
+    public ResponseEntity<Product> addProduct(Product Product)
     {
          productrepo.save(Product);
         return ResponseEntity.ok(Product);
     }
 
-    public ResponseEntity<product> editProduct(Integer id,product Product)
+    public ResponseEntity<Product> editProduct(Integer id, Product Product)
     {
         System.out.println("hello parent");
        /*productrepo.findById(id).map(p1->
@@ -47,7 +47,7 @@ public class productService {
     }
     public void deleteProduct(Integer id){ productrepo.deleteById(id);}
 
-    public List<product> getProduct() {
+    public List<Product> getProduct() {
         return productrepo.findAll();
     }
 

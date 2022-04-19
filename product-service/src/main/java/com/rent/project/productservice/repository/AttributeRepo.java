@@ -3,5 +3,5 @@ package com.rent.project.productservice.repository;
 import com.rent.project.productservice.models.Attribute;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface attributeRepo extends JpaRepository<Attribute,Integer> {
+public interface AttributeRepo extends JpaRepository<Attribute,Integer> {
 }

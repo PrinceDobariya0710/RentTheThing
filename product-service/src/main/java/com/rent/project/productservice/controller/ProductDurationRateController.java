@@ -1,6 +1,7 @@
 package com.rent.project.productservice.controller;
 
-import com.rent.project.productservice.models.productDurationRate;
+import com.rent.project.productservice.models.ProductDurationRate;
+import com.rent.project.productservice.services.ProductDurationRateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,18 +10,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/duration")
-public class productDurationRateController {
+public class ProductDurationRateController {
     @Autowired
-    com.rent.project.productservice.services.productDurationRateService productDurationRateService;
+    ProductDurationRateService productDurationRateService;
 
     @PostMapping("/add")
-    public ResponseEntity<productDurationRate> addDuration(@RequestBody productDurationRate productDurationRate)
+    public ResponseEntity<ProductDurationRate> addDuration(@RequestBody ProductDurationRate productDurationRate)
     {
         return productDurationRateService.addDuration(productDurationRate);
     }
 
     @PutMapping("/edit/{Id}")
-    public ResponseEntity<productDurationRate> editDuration(@PathVariable Integer Id,@RequestBody productDurationRate productDurationRate){
+    public ResponseEntity<ProductDurationRate> editDuration(@PathVariable Integer Id, @RequestBody ProductDurationRate productDurationRate){
         return productDurationRateService.editDuration(Id,productDurationRate);
     }
     @DeleteMapping("/delete/{Id}")
@@ -29,7 +30,7 @@ public class productDurationRateController {
         productDurationRateService.deleteDuration(Id);
     }
     @GetMapping ("/all")
-    public List<productDurationRate> getDuration() {
+    public List<ProductDurationRate> getDuration() {
         return productDurationRateService.getDuration();
     }
 }

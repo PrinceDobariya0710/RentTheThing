@@ -1,7 +1,7 @@
 package com.rent.project.productservice.services;
 
-import com.rent.project.productservice.models.productDurationRate;
-import com.rent.project.productservice.repository.productDurationRateRepo;
+import com.rent.project.productservice.models.ProductDurationRate;
+import com.rent.project.productservice.repository.ProductDurationRateRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -9,17 +9,17 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class productDurationRateService {
+public class ProductDurationRateService {
     @Autowired
-    productDurationRateRepo durationRateRepo;
+    ProductDurationRateRepo durationRateRepo;
 
-    public ResponseEntity<productDurationRate> addDuration(productDurationRate pdr)
+    public ResponseEntity<ProductDurationRate> addDuration(ProductDurationRate pdr)
     {
         durationRateRepo.save(pdr);
         return ResponseEntity.ok(pdr);
     }
 
-    public ResponseEntity<productDurationRate> editDuration(Integer id,productDurationRate pdr)
+    public ResponseEntity<ProductDurationRate> editDuration(Integer id, ProductDurationRate pdr)
     {
         if(durationRateRepo.findById(id).isPresent())
         {
@@ -31,7 +31,7 @@ public class productDurationRateService {
     }
     public void deleteDuration(Integer id){ durationRateRepo.deleteById(id);}
 
-    public List<productDurationRate> getDuration() {
+    public List<ProductDurationRate> getDuration() {
         return durationRateRepo.findAll();
     }
 }

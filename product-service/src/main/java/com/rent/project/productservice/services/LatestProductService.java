@@ -2,8 +2,8 @@ package com.rent.project.productservice.services;
 
 import com.rent.project.productservice.models.ProductDetail;
 import com.rent.project.productservice.models.ProductInventory;
-import com.rent.project.productservice.repository.productDetailRepo;
-import com.rent.project.productservice.repository.productInventoryRepo;
+import com.rent.project.productservice.repository.ProductDetailRepo;
+import com.rent.project.productservice.repository.ProductInventoryRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +13,10 @@ import java.util.List;
 @Service
 public class LatestProductService {
     @Autowired
-    productInventoryRepo productInventoryRepo;
+    ProductInventoryRepo productInventoryRepo;
 
     @Autowired
-    productDetailRepo detailRepo;
+    ProductDetailRepo detailRepo;
 
     public List<ProductDetail> getLatestProduct()
     {

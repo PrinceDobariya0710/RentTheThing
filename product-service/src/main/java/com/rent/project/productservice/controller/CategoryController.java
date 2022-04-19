@@ -1,7 +1,7 @@
 package com.rent.project.productservice.controller;
 
-import com.rent.project.productservice.models.category;
-import com.rent.project.productservice.services.categoryService;
+import com.rent.project.productservice.models.Category;
+import com.rent.project.productservice.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,19 +10,19 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/category")
-public class categoryController {
+public class CategoryController {
 
     @Autowired
-    categoryService cs;
+    CategoryService cs;
 
     @PostMapping("/add")
-    public ResponseEntity<category> addcategory(@RequestBody category cg)
+    public ResponseEntity<Category> addcategory(@RequestBody Category cg)
     {
         return cs.addCategory(cg);
     }
 
     @PutMapping("/edit/{Id}")
-    public ResponseEntity<category> editcategory(@PathVariable Integer Id,@RequestBody category cg){
+    public ResponseEntity<Category> editcategory(@PathVariable Integer Id, @RequestBody Category cg){
         return cs.editCategory(Id,cg);
     }
     @DeleteMapping("/delete/{Id}")
@@ -31,7 +31,7 @@ public class categoryController {
         cs.deleteCategory(Id);
     }
     @GetMapping ("/all")
-    public List<category> getcategories() {
+    public List<Category> getcategories() {
         return cs.getCategory();
     }
 }

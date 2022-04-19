@@ -1,26 +1,26 @@
 package com.rent.project.productservice.services;
 
 import com.rent.project.productservice.models.ProductDetail;
-import com.rent.project.productservice.models.product;
-import com.rent.project.productservice.repository.productDetailRepo;
-import com.rent.project.productservice.repository.productRepo;
+import com.rent.project.productservice.models.Product;
+import com.rent.project.productservice.repository.ProductDetailRepo;
+import com.rent.project.productservice.repository.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class productDetailOfSpecificUserService {
+public class ProductDetailOfSpecificUserService {
     @Autowired
-    productRepo pr;
+    ProductRepo pr;
 
     @Autowired
-    productDetailRepo pdr;
+    ProductDetailRepo pdr;
 
     public List<ProductDetail> getUserProduct(Integer id)
     {
         final int[] i = new int[1];
-        List<product> pmodel = pr.fetchUserProduct(id);
+        List<Product> pmodel = pr.fetchUserProduct(id);
 
         List<ProductDetail> pdmodel = new ArrayList<>();
 

@@ -1,8 +1,8 @@
 package com.rent.project.productservice.controller;
 
-import com.rent.project.productservice.models.product;
-import com.rent.project.productservice.repository.productRepo;
-import com.rent.project.productservice.services.productService;
+import com.rent.project.productservice.models.Product;
+import com.rent.project.productservice.repository.ProductRepo;
+import com.rent.project.productservice.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,21 +11,21 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/product")
-public class productController {
+public class ProductController {
 
     @Autowired
-    productRepo productrepo;
+    ProductRepo productrepo;
 
     @Autowired
-    productService ps;
+    ProductService ps;
     @PostMapping("/add")
-    public ResponseEntity<product> addproduct(@RequestBody product Product)
+    public ResponseEntity<Product> addproduct(@RequestBody Product Product)
     {
         return ps.addProduct(Product);
     }
 
     @PutMapping("/edit/{Id}")
-    public ResponseEntity<product> editproduct(@PathVariable Integer Id,@RequestBody product Product)
+    public ResponseEntity<Product> editproduct(@PathVariable Integer Id, @RequestBody Product Product)
     {
         return ps.editProduct(Id,Product);
     }
@@ -37,7 +37,7 @@ public class productController {
     }
 
     @GetMapping ("/all")
-    public List<product> getProducts() {
+    public List<Product> getProducts() {
         return ps.getProduct();
     }
 }
