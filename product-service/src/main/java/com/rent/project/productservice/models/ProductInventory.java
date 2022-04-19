@@ -19,7 +19,7 @@ public class ProductInventory {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "product_id", nullable = false)
     //@JsonManagedReference
-    private product product;
+    private Product product;
 
     @Column(name = "quantity", nullable = false)
     private Integer quantity;
@@ -41,11 +41,11 @@ public class ProductInventory {
         this.id = id;
     }
 
-    public com.rent.project.productservice.models.product getProduct() {
+    public Product getProduct() {
         return product;
     }
 
-    public void setProduct(com.rent.project.productservice.models.product product) {
+    public void setProduct(Product product) {
         this.product = product;
     }
 

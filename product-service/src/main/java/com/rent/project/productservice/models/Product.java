@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 @Data
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class product {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -42,12 +42,12 @@ public class product {
     @ManyToOne
     //@JsonManagedReference
     @JoinColumn(name = "subcategory_id", referencedColumnName = "id")
-    private subCategory subcategory;
+    private SubCategory subcategory;
 
     @ManyToOne
     //@JsonManagedReference
     @JoinColumn(name = "productDurationRate_id", referencedColumnName = "id")
-    private productDurationRate productDurationRates;
+    private ProductDurationRate productDurationRates;
 
    /* @OneToMany(mappedBy = "product")
     @JsonBackReference

@@ -1,7 +1,7 @@
 package com.rent.project.productservice.controller;
 
 import com.rent.project.productservice.models.ProductDetail;
-import com.rent.project.productservice.services.productDetailOfSpecificUserService;
+import com.rent.project.productservice.services.CategoryproductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,17 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/userproduct")
-public class productDetailOfSpecificUserController {
-
+@RequestMapping("/categoryproduct")
+public class CategoryProductController {
     @Autowired
-    productDetailOfSpecificUserService pdservice;
+    CategoryproductService categoryproductService;
 
-    @GetMapping("/get/{id}")
-    public List<ProductDetail> getUserProduct(@PathVariable Integer id)
+    @GetMapping("/get/{category}")
+    public List<ProductDetail> getLatestProduct(@PathVariable String category)
     {
-        return pdservice.getUserProduct(id);
+        return categoryproductService.getCategoryProduct(category);
     }
-
 }
-

@@ -1,6 +1,7 @@
 package com.rent.project.productservice.controller;
 
 import com.rent.project.productservice.models.Attribute;
+import com.rent.project.productservice.services.AttributeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,9 +10,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/attribute")
-public class attributeController {
+public class AttributeController {
     @Autowired
-    com.rent.project.productservice.services.attributeService attributeService;
+    AttributeService attributeService;
 
     @PostMapping("/add")
     public ResponseEntity<Attribute> addAttribute(@RequestBody Attribute attribute)

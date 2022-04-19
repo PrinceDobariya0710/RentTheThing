@@ -1,17 +1,17 @@
 package com.rent.project.productservice.repository;
 
-import com.rent.project.productservice.models.product;
+import com.rent.project.productservice.models.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface productRepo extends JpaRepository<product,Integer> {
+public interface ProductRepo extends JpaRepository<Product,Integer> {
 
     @Query(value = "select * from product where user_id=?1",nativeQuery = true)
-    List<product> fetchUserProduct(Integer id);
+    List<Product> fetchUserProduct(Integer id);
 
     @Query(value = "select * from product where subcategory_id=?1",nativeQuery = true)
-    List<product> fetchCategoryProduct(Integer id);
+    List<Product> fetchCategoryProduct(Integer id);
 
 }

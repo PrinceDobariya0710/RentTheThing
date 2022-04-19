@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Entity
 @Data
 @Table(name = "sub_category")
-public class subCategory {
+public class SubCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -18,13 +18,13 @@ public class subCategory {
     @ManyToOne
     //@JsonManagedReference
     @JoinColumn(name = "category_id",nullable = false,referencedColumnName = "id")
-    private  category cateGory;
+    private  Category cateGory;
 
 //    @OneToMany(mappedBy = "subcategory")
 //   // @JsonBackReference
 //    private Set<product> products;
 
-    public subCategory()
+    public SubCategory()
     {
 
     }

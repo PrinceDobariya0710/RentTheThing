@@ -1,7 +1,6 @@
 package com.rent.project.productservice.services;
 
-import com.rent.project.productservice.models.category;
-import com.rent.project.productservice.repository.categoryRepo;
+import com.rent.project.productservice.models.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -9,18 +8,18 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class categoryService {
+public class CategoryService {
 
     @Autowired
-    categoryRepo CategoryRepo;
+    com.rent.project.productservice.repository.CategoryRepo CategoryRepo;
 
-    public ResponseEntity<category> addCategory(category ct)
+    public ResponseEntity<Category> addCategory(Category ct)
     {
         CategoryRepo.save(ct);
         return ResponseEntity.ok(ct);
     }
 
-    public ResponseEntity<category> editCategory(Integer id,category ct)
+    public ResponseEntity<Category> editCategory(Integer id, Category ct)
     {
         if(CategoryRepo.findById(id).isPresent())
         {
@@ -32,7 +31,7 @@ public class categoryService {
     }
     public void deleteCategory(Integer id){ CategoryRepo.deleteById(id);}
 
-    public List<category> getCategory() {
+    public List<Category> getCategory() {
         return CategoryRepo.findAll();
     }
 

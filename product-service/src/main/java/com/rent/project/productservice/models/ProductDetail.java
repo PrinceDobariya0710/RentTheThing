@@ -21,7 +21,7 @@ public class ProductDetail {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     //@JsonManagedReference
     @JoinColumn(name = "product_id", nullable = false)
-    private product product;
+    private Product product;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     //@JsonManagedReference
@@ -44,11 +44,11 @@ public class ProductDetail {
         this.attributeValue = attributeValue;
     }
 
-    public com.rent.project.productservice.models.product getProduct() {
+    public Product getProduct() {
         return product;
     }
 
-    public void setProduct(com.rent.project.productservice.models.product product) {
+    public void setProduct(Product product) {
         this.product = product;
     }
 

@@ -1,16 +1,16 @@
 package com.rent.project.productservice.services;
 
 import com.rent.project.productservice.models.Attribute;
-import com.rent.project.productservice.repository.attributeRepo;
+import com.rent.project.productservice.repository.AttributeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class attributeService {
+public class AttributeService {
     @Autowired
-    attributeRepo attributeRepo;
+    AttributeRepo attributeRepo;
 
     public ResponseEntity<Attribute> addAttribute(Attribute attribute)
     {

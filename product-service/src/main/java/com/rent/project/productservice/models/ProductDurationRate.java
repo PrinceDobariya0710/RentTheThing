@@ -1,14 +1,12 @@
 package com.rent.project.productservice.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Data
-public class productDurationRate {
+public class ProductDurationRate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -20,7 +18,7 @@ public class productDurationRate {
 //    //@JsonBackReference
 //    private Set<product> products;
 
-    public productDurationRate()
+    public ProductDurationRate()
     {
 
     }
