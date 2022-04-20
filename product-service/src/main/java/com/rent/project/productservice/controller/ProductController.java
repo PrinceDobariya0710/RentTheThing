@@ -22,13 +22,13 @@ public class ProductController {
     }
 
     @PutMapping("/edit/{Id}")
-    public ResponseEntity<Product> editproduct(@PathVariable Integer Id, @RequestBody Product Product)
+    public ResponseEntity<Product> editproduct(@PathVariable Long Id, @RequestBody Product Product)
     {
         return ps.editProduct(Id,Product);
     }
 
     @DeleteMapping("/delete/{Id}")
-    public void deleteproduct(@PathVariable Integer Id)
+    public void deleteproduct(@PathVariable Long Id)
     {
         ps.deleteProduct(Id);
     }

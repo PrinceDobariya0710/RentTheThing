@@ -9,14 +9,10 @@ import javax.persistence.*;
 public class ProductDurationRate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column (name = "duration")
     private String duration;
-
-//    @OneToMany(mappedBy = "productDurationRates")
-//    //@JsonBackReference
-//    private Set<product> products;
 
     public ProductDurationRate()
     {

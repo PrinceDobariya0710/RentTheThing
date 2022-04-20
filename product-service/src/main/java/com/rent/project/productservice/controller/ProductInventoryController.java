@@ -21,13 +21,13 @@ public class ProductInventoryController {
     }
 
     @PutMapping("/edit/{Id}")
-    public ResponseEntity<ProductInventory> editproductInventory(@PathVariable Integer Id, @RequestBody ProductInventory productInventory)
+    public ResponseEntity<ProductInventory> editproductInventory(@PathVariable Long Id, @RequestBody ProductInventory productInventory)
     {
         return productInventoryService.editProductInventory(Id,productInventory);
     }
 
     @DeleteMapping("/delete/{Id}")
-    public void deleteproductInventory(@PathVariable Integer Id)
+    public void deleteproductInventory(@PathVariable Long Id)
     {
         productInventoryService.deleteProductInventory(Id);
     }

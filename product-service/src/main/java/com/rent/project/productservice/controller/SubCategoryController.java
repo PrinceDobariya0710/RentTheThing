@@ -21,11 +21,11 @@ public class SubCategoryController {
     }
 
     @PutMapping("/edit/{Id}")
-    public ResponseEntity<SubCategory> editsubcategory(@PathVariable Integer Id, @RequestBody SubCategory sb){
+    public ResponseEntity<SubCategory> editsubcategory(@PathVariable Long Id, @RequestBody SubCategory sb){
         return subCategoryService.editsubCategory(Id,sb);
     }
     @DeleteMapping("/delete/{Id}")
-    public void deletesubcategory(@PathVariable Integer Id)
+    public void deletesubcategory(@PathVariable Long Id)
     {
         subCategoryService.deletesubCategory(Id);
     }

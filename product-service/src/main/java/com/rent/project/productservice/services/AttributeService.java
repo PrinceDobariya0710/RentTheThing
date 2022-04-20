@@ -18,7 +18,7 @@ public class AttributeService {
         return ResponseEntity.ok(attribute);
     }
 
-    public ResponseEntity<Attribute> editAttribute(Integer id,Attribute attribute)
+    public ResponseEntity<Attribute> editAttribute(Long id,Attribute attribute)
     {
         if(attributeRepo.findById(id).isPresent())
         {
@@ -28,7 +28,7 @@ public class AttributeService {
         }
         return ResponseEntity.notFound().build();
     }
-    public void deleteAttribute(Integer id){ attributeRepo.deleteById(id);}
+    public void deleteAttribute(Long id){ attributeRepo.deleteById(id);}
 
     public List<Attribute> getAttribute() {
         return attributeRepo.findAll();

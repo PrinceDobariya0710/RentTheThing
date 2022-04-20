@@ -22,11 +22,11 @@ public class CategoryController {
     }
 
     @PutMapping("/edit/{Id}")
-    public ResponseEntity<Category> editcategory(@PathVariable Integer Id, @RequestBody Category cg){
+    public ResponseEntity<Category> editcategory(@PathVariable Long Id, @RequestBody Category cg){
         return cs.editCategory(Id,cg);
     }
     @DeleteMapping("/delete/{Id}")
-    public void deletecategory(@PathVariable Integer Id)
+    public void deletecategory(@PathVariable Long Id)
     {
         cs.deleteCategory(Id);
     }

@@ -14,7 +14,7 @@ public class ProductInventory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private Integer id;
+    private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "product_id", nullable = false)
@@ -32,53 +32,5 @@ public class ProductInventory {
 
     @Column(name = "deleted_at", nullable = false)
     private LocalDate deletedAt;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
-    public LocalDate getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDate createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDate getModifiedAt() {
-        return modifiedAt;
-    }
-
-    public void setModifiedAt(LocalDate modifiedAt) {
-        this.modifiedAt = modifiedAt;
-    }
-
-    public LocalDate getDeletedAt() {
-        return deletedAt;
-    }
-
-    public void setDeletedAt(LocalDate deletedAt) {
-        this.deletedAt = deletedAt;
-    }
 
 }

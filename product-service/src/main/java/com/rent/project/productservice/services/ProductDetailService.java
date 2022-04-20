@@ -18,7 +18,7 @@ public class ProductDetailService {
         return ResponseEntity.ok(productDetail);
     }
 
-    public ResponseEntity<ProductDetail> editProductDetail(Integer id, ProductDetail productDetail)
+    public ResponseEntity<ProductDetail> editProductDetail(Long id, ProductDetail productDetail)
     {
        /*productrepo.findById(id).map(p1->
        {
@@ -35,7 +35,7 @@ public class ProductDetailService {
         }
         return ResponseEntity.notFound().build();
     }
-    public void deleteProductDetail(Integer id){ proDR.deleteById(id);}
+    public void deleteProductDetail(Long id){ proDR.deleteById(id);}
     public List<ProductDetail> getProductDetail() {
         return proDR.findAll();
     }

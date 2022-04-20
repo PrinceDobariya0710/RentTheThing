@@ -20,7 +20,7 @@ public class ProductInventoryService {
         return ResponseEntity.ok(productInventory);
     }
 
-    public ResponseEntity<ProductInventory> editProductInventory(Integer id, ProductInventory productInventory)
+    public ResponseEntity<ProductInventory> editProductInventory(Long id, ProductInventory productInventory)
     {
         if(productInventoryRepo.findById(id).isPresent())
         {
@@ -30,7 +30,7 @@ public class ProductInventoryService {
         }
         return ResponseEntity.notFound().build();
     }
-    public void deleteProductInventory(Integer id){ productInventoryRepo.deleteById(id);}
+    public void deleteProductInventory(Long id){ productInventoryRepo.deleteById(id);}
     public List<ProductInventory> getProductInventory() {
         return productInventoryRepo.findAll();
     }

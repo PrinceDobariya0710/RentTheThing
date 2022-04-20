@@ -27,7 +27,7 @@ public class ProductService {
         return ResponseEntity.ok(Product);
     }
 
-    public ResponseEntity<Product> editProduct(Integer id, Product Product)
+    public ResponseEntity<Product> editProduct(Long id, Product Product)
     {
         System.out.println("hello parent");
        /*productrepo.findById(id).map(p1->
@@ -45,7 +45,7 @@ public class ProductService {
         }
        return ResponseEntity.notFound().build();
     }
-    public void deleteProduct(Integer id){ productrepo.deleteById(id);}
+    public void deleteProduct(Long id){ productrepo.deleteById(id);}
 
     public List<Product> getProduct() {
         return productrepo.findAll();

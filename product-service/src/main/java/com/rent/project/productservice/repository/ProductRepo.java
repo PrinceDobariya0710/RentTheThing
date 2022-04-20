@@ -6,12 +6,12 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface ProductRepo extends JpaRepository<Product,Integer> {
+public interface ProductRepo extends JpaRepository<Product,Long> {
 
     @Query(value = "select * from product where user_id=?1",nativeQuery = true)
-    List<Product> fetchUserProduct(Integer id);
+    List<Product> fetchUserProduct(Long id);
 
     @Query(value = "select * from product where subcategory_id=?1",nativeQuery = true)
-    List<Product> fetchCategoryProduct(Integer id);
+    List<Product> fetchCategoryProduct(Long id);
 
 }

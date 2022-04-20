@@ -21,11 +21,11 @@ public class ProductDurationRateController {
     }
 
     @PutMapping("/edit/{Id}")
-    public ResponseEntity<ProductDurationRate> editDuration(@PathVariable Integer Id, @RequestBody ProductDurationRate productDurationRate){
+    public ResponseEntity<ProductDurationRate> editDuration(@PathVariable Long Id, @RequestBody ProductDurationRate productDurationRate){
         return productDurationRateService.editDuration(Id,productDurationRate);
     }
     @DeleteMapping("/delete/{Id}")
-    public void deleteDuration(@PathVariable Integer Id)
+    public void deleteDuration(@PathVariable Long Id)
     {
         productDurationRateService.deleteDuration(Id);
     }

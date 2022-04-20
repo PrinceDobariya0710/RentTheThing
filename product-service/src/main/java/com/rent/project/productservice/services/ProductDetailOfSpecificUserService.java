@@ -17,7 +17,7 @@ public class ProductDetailOfSpecificUserService {
     @Autowired
     ProductDetailRepo pdr;
 
-    public List<ProductDetail> getUserProduct(Integer id)
+    public List<ProductDetail> getUserProduct(Long id)
     {
         final int[] i = new int[1];
         List<Product> pmodel = pr.fetchUserProduct(id);

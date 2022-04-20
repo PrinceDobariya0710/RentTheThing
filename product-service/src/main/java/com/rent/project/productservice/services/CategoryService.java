@@ -19,7 +19,7 @@ public class CategoryService {
         return ResponseEntity.ok(ct);
     }
 
-    public ResponseEntity<Category> editCategory(Integer id, Category ct)
+    public ResponseEntity<Category> editCategory(Long id, Category ct)
     {
         if(CategoryRepo.findById(id).isPresent())
         {
@@ -29,7 +29,7 @@ public class CategoryService {
         }
         return ResponseEntity.notFound().build();
     }
-    public void deleteCategory(Integer id){ CategoryRepo.deleteById(id);}
+    public void deleteCategory(Long id){ CategoryRepo.deleteById(id);}
 
     public List<Category> getCategory() {
         return CategoryRepo.findAll();

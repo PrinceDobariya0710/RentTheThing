@@ -24,13 +24,13 @@ public class ProductDetailController {
     }
 
     @PutMapping("/edit/{Id}")
-    public ResponseEntity<ProductDetail> editproductdetail(@PathVariable Integer Id, @RequestBody ProductDetail productDetail)
+    public ResponseEntity<ProductDetail> editproductdetail(@PathVariable Long Id, @RequestBody ProductDetail productDetail)
     {
         return pds.editProductDetail(Id,productDetail);
     }
 
     @DeleteMapping("/delete/{Id}")
-    public void deleteproductdetail(@PathVariable Integer Id)
+    public void deleteproductdetail(@PathVariable Long Id)
     {
         pds.deleteProductDetail(Id);
     }
