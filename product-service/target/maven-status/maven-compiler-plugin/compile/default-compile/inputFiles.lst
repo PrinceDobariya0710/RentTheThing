@@ -13,6 +13,7 @@ C:\Users\bbdnet10198\Desktop\ProjectSpringBoot\RentTheThing\product-service\src\
 C:\Users\bbdnet10198\Desktop\ProjectSpringBoot\RentTheThing\product-service\src\main\java\com\rent\project\productservice\repository\UserCredentialsRepo.java
 C:\Users\bbdnet10198\Desktop\ProjectSpringBoot\RentTheThing\product-service\src\main\java\com\rent\project\productservice\controller\ProductInventoryController.java
 C:\Users\bbdnet10198\Desktop\ProjectSpringBoot\RentTheThing\product-service\src\main\java\com\rent\project\productservice\models\ProductInventory.java
+C:\Users\bbdnet10198\Desktop\ProjectSpringBoot\RentTheThing\product-service\src\main\java\com\rent\project\productservice\services\FileUploadService.java
 C:\Users\bbdnet10198\Desktop\ProjectSpringBoot\RentTheThing\product-service\src\main\java\com\rent\project\productservice\controller\CategoryController.java
 C:\Users\bbdnet10198\Desktop\ProjectSpringBoot\RentTheThing\product-service\src\main\java\com\rent\project\productservice\services\ProductInventoryService.java
 C:\Users\bbdnet10198\Desktop\ProjectSpringBoot\RentTheThing\product-service\src\main\java\com\rent\project\productservice\models\Product.java
@@ -29,6 +30,7 @@ C:\Users\bbdnet10198\Desktop\ProjectSpringBoot\RentTheThing\product-service\src\
 C:\Users\bbdnet10198\Desktop\ProjectSpringBoot\RentTheThing\product-service\src\main\java\com\rent\project\productservice\models\SubCategory.java
 C:\Users\bbdnet10198\Desktop\ProjectSpringBoot\RentTheThing\product-service\src\main\java\com\rent\project\productservice\repository\ProductRepo.java
 C:\Users\bbdnet10198\Desktop\ProjectSpringBoot\RentTheThing\product-service\src\main\java\com\rent\project\productservice\repository\ProductDetailRepo.java
+C:\Users\bbdnet10198\Desktop\ProjectSpringBoot\RentTheThing\product-service\src\main\java\com\rent\project\productservice\controller\FileUploadController.java
 C:\Users\bbdnet10198\Desktop\ProjectSpringBoot\RentTheThing\product-service\src\main\java\com\rent\project\productservice\models\Attribute.java
 C:\Users\bbdnet10198\Desktop\ProjectSpringBoot\RentTheThing\product-service\src\main\java\com\rent\project\productservice\ProductserviceApplication.java
 C:\Users\bbdnet10198\Desktop\ProjectSpringBoot\RentTheThing\product-service\src\main\java\com\rent\project\productservice\repository\CategoryRepo.java
