@@ -19,7 +19,7 @@ public class ProductDurationRateService {
         return ResponseEntity.ok(pdr);
     }
 
-    public ResponseEntity<ProductDurationRate> editDuration(Integer id, ProductDurationRate pdr)
+    public ResponseEntity<ProductDurationRate> editDuration(Long id, ProductDurationRate pdr)
     {
         if(durationRateRepo.findById(id).isPresent())
         {
@@ -29,7 +29,7 @@ public class ProductDurationRateService {
         }
         return ResponseEntity.notFound().build();
     }
-    public void deleteDuration(Integer id){ durationRateRepo.deleteById(id);}
+    public void deleteDuration(Long id){ durationRateRepo.deleteById(id);}
 
     public List<ProductDurationRate> getDuration() {
         return durationRateRepo.findAll();

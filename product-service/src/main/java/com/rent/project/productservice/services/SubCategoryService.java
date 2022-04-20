@@ -19,7 +19,7 @@ public class SubCategoryService {
         return ResponseEntity.ok(sc);
     }
 
-    public ResponseEntity<SubCategory> editsubCategory(Integer id, SubCategory sc)
+    public ResponseEntity<SubCategory> editsubCategory(Long id, SubCategory sc)
     {
         if(scr.findById(id).isPresent())
         {
@@ -29,7 +29,7 @@ public class SubCategoryService {
         }
         return ResponseEntity.notFound().build();
     }
-    public void deletesubCategory(Integer id){ scr.deleteById(id);}
+    public void deletesubCategory(Long id){ scr.deleteById(id);}
 
     public List<SubCategory> getsubCategory() {
         return scr.findAll();

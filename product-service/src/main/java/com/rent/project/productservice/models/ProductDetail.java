@@ -13,7 +13,7 @@ public class ProductDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "productd_id", nullable = false)
-    private Integer id;
+    private Long id;
 
     @Column(name = "attribute_value", nullable = false, length = 30)
     private String attributeValue;
@@ -28,36 +28,5 @@ public class ProductDetail {
     @JoinColumn(name = "attribute_id", nullable = false)
     private Attribute attribute;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getAttributeValue() {
-        return attributeValue;
-    }
-
-    public void setAttributeValue(String attributeValue) {
-        this.attributeValue = attributeValue;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
-    public Attribute getAttribute() {
-        return attribute;
-    }
-
-    public void setAttribute(Attribute attribute) {
-        this.attribute = attribute;
-    }
 
 }

@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class SubCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name = "subCategory_name")
     private String subCategory_name;

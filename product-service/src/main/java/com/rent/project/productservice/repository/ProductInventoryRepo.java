@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface ProductInventoryRepo extends JpaRepository<ProductInventory,Integer> {
+public interface ProductInventoryRepo extends JpaRepository<ProductInventory,Long> {
 
     @Query(value="select * from product_inventory where created_at >= now() - INTERVAL 30 day",nativeQuery = true)
     List<ProductInventory> fetchLatestProduct();

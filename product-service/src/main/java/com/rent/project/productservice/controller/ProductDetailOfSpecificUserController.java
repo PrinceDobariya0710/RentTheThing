@@ -18,7 +18,7 @@ public class ProductDetailOfSpecificUserController {
     ProductDetailOfSpecificUserService pdservice;
 
     @GetMapping("/get/{id}")
-    public List<ProductDetail> getUserProduct(@PathVariable Integer id)
+    public List<ProductDetail> getUserProduct(@PathVariable Long id)
     {
         return pdservice.getUserProduct(id);
     }
