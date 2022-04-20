@@ -9,10 +9,8 @@ import java.io.IOException;
 @Service
 public class FileUploadService {
 
-    public void uploadFile(MultipartFile file) throws IOException {
+    public String uploadFile(MultipartFile file) throws IOException {
         file.transferTo(new File("C:\\Users\\bbdnet10198\\Desktop\\ProjectSpringBoot\\RentTheThing\\uploads\\" + file.getOriginalFilename()));
-        ProductService productService;
-
-
+        return file.getOriginalFilename();
     }
 }

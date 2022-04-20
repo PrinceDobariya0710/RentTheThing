@@ -18,15 +18,11 @@ import java.util.List;
 public class ProductService {
     @Autowired
     ProductRepo productrepo;
-
+    @Autowired
+    FileUploadService fileUploadService;
     public ResponseEntity<Product> addProduct(Product product,MultipartFile file) throws IOException {
-//        String s = uploadFile(file);
-//        Product.setProduct_image(s);
-//        System.out.println(s);
-//        file.transferTo(new File("C:\\Users\\bbdnet10198\\Desktop\\ProjectSpringBoot\\RentTheThing\\uploads\\"+file.getOriginalFilename()));
-//        Product.setProduct_image(file.getOriginalFilename());
-        file.transferTo(new File("C:\\Users\\bbdnet10198\\Desktop\\ProjectSpringBoot\\RentTheThing\\uploads\\" + file.getOriginalFilename()));
-        product.setProduct_image(file.getOriginalFilename());
+        String filename=fileUploadService.uploadFile(file);
+        product.setProduct_image(filename);
         productrepo.save(product);
         return ResponseEntity.ok(product);
     }
@@ -35,8 +31,8 @@ public class ProductService {
         if(productrepo.findById(id).isPresent())
         {
             product.setId(id);
-            file.transferTo(new File("C:\\Users\\bbdnet10198\\Desktop\\ProjectSpringBoot\\RentTheThing\\uploads\\" + file.getOriginalFilename()));
-            product.setProduct_image(file.getOriginalFilename());
+            String filename=fileUploadService.uploadFile(file);
+            product.setProduct_image(filename);
             productrepo.save(product);
             return ResponseEntity.ok(product);
         }

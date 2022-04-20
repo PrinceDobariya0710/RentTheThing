@@ -19,16 +19,12 @@ public class ProductController {
 
 
     @PostMapping("/add")
-    public ResponseEntity<Product> addproduct(Product product,@ModelAttribute("file") MultipartFile file) throws IOException {
+    public ResponseEntity<Product> addproduct(@RequestPart Product product,@RequestParam("file") MultipartFile file) throws IOException {
         return ps.addProduct(product,file);
     }
-//    @PostMapping("/upload")
-//    public String upload(@RequestParam("file") MultipartFile file) throws IOException {
-//        return ps.uploadFile(file);
-//    }
     @PutMapping("/edit/{Id}")
-    public ResponseEntity<Product> editproduct(@PathVariable Long Id, Product Product,@ModelAttribute("file") MultipartFile file) throws IOException {
-        return ps.editProduct(Id,Product,file);
+    public ResponseEntity<Product> editproduct(@PathVariable Long Id,@RequestPart Product product,@RequestParam("file") MultipartFile file) throws IOException {
+        return ps.editProduct(Id,product,file);
     }
 
     @DeleteMapping("/delete/{Id}")

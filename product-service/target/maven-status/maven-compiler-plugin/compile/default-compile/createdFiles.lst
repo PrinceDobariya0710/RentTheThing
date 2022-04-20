@@ -1,4 +1,3 @@
 com\rent\project\productservice\controller\ProductInventoryController.class
-com\rent\project\productservice\controller\FileUploadController.class
 com\rent\project\productservice\services\FileUploadService.class
 com\rent\project\productservice\services\ProductInventoryService.class
