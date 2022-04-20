@@ -11,7 +11,9 @@ public interface User_Credentials_Repository extends JpaRepository<UserCredentia
     @Query(value = "SELECT * from user_credentials WHERE username = ?1",nativeQuery = true)
     UserCredentials findByUserName(String userName);
 
-    Optional<UserCredentials> findByEmail(String email);
+    @Query(value = "select * from user_credentials where email = ?1",nativeQuery = true)
+    UserCredentials findByEmail(String email);
+
     Boolean existsByUserName(String userName);
     Boolean existsByEmail(String email);
 }

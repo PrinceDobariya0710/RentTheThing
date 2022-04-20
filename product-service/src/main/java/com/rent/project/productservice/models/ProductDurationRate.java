@@ -14,10 +14,6 @@ public class ProductDurationRate {
     @Column (name = "duration")
     private String duration;
 
-//    @OneToMany(mappedBy = "productDurationRates")
-//    //@JsonBackReference
-//    private Set<product> products;
-
     public ProductDurationRate()
     {
 

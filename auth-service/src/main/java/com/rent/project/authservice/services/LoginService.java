@@ -16,20 +16,15 @@ public class LoginService {
     @Autowired
     private PasswordEncoder encoder;
 
-    //Login Service
+    //Signup Service
     public ResponseEntity<String> userSignIn(UserCredentials signUpRequest) {
-        if (userRepo.existsByUserName(signUpRequest.getUserName())) {
-            return ResponseEntity
-                    .badRequest()
-                    .body("Error: Username is already taken!");
-        }
         if (userRepo.existsByEmail(signUpRequest.getEmail())) {
             return ResponseEntity
                     .badRequest()
                     .body("Error: Email is already in use!");
         }
         UserCredentials user;
-        if (signUpRequest.getRole().get(0).equals("USER")) {
+        if (signUpRequest.getRole().getRole_id()==1) {
             String password = signUpRequest.getPassword();
             String p=encoder.encode(password);
             signUpRequest.setPassword(p);

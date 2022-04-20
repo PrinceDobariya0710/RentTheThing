@@ -12,6 +12,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/api/auth/")
@@ -45,7 +46,7 @@ public class AuthController {
        try {
            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUserName(), authRequest.getPassword()));
        } catch (Exception ex) {
-           throw new Exception("inavalid username/password");
+           throw new Exception("inavalid username/password" + ex);
        }
        String token_jwt = jwtUtil.generateToken(authRequest.getUserName());
        response.setHeader("access_token","Bearer "+token_jwt);

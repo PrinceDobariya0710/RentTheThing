@@ -1,6 +1,7 @@
 package com.rent.project.productservice.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.rent.project.productservice.models.userdetails.UserDetails;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -15,8 +16,8 @@ public class Product {
 
     @ManyToOne
    // @JsonManagedReference
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private UserCredentials userCredentials;
+    @JoinColumn(name = "user_details_id", referencedColumnName = "id")
+    private UserDetails userDetails;
 
     @Column(name = "product_name" )
     private String productName;

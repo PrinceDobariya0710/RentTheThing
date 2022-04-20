@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
@@ -29,9 +30,9 @@ public class UserCredentials {
     @Column(nullable = false, length = 64)
     private String password;
 
-
-    @ElementCollection(fetch = FetchType.EAGER)
-    private List<String> role;
+    @ManyToOne
+    @JoinColumn(nullable = false,referencedColumnName = "role_id")
+    private Roles role;
 
     @Column(name = "created_at", nullable = false)
     private Date createdAt;

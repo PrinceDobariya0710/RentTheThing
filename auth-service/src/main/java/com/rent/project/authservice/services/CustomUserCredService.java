@@ -21,16 +21,22 @@ public class CustomUserCredService implements UserDetailsService{
 
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserCredentials user = userRepo.findByUserName(username);
-        List<SimpleGrantedAuthority> role = null;
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        UserCredentials user = userRepo.findByEmail(email);
 
-        if(user!=null){
-            List<String> roleInt = user.getRole();
-            role = roleInt.stream().map( r -> new SimpleGrantedAuthority(r)).collect(Collectors.toList());
-            return new User(user.getUserName(),user.getPassword(),role);
+        if(user != null){
+            return User.builder().username(user.getEmail()).password(user.getPassword()).roles(user.getRole().getRole_name()).build();
+        }else {
+            throw new UsernameNotFoundException("User not found..!");
         }
-        throw new UsernameNotFoundException("User not found with the name " + username);
+//        List<SimpleGrantedAuthority> role = null;
+//
+//        if(user!=null){
+//            List<String> roleInt = user.getRole();
+//            role = roleInt.stream().map( r -> new SimpleGrantedAuthority(r)).collect(Collectors.toList());
+//            return new User(user.getEmail(),user.getPassword(),role);
+//        }
+//        throw new UsernameNotFoundException("User not found with the name " + email);
 
     }
 

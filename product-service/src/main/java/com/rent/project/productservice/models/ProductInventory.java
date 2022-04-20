@@ -1,11 +1,15 @@
 package com.rent.project.productservice.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Data
 @Table(name = "product_inventory")
@@ -32,53 +36,5 @@ public class ProductInventory {
 
     @Column(name = "deleted_at", nullable = false)
     private LocalDate deletedAt;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
-    public LocalDate getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDate createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDate getModifiedAt() {
-        return modifiedAt;
-    }
-
-    public void setModifiedAt(LocalDate modifiedAt) {
-        this.modifiedAt = modifiedAt;
-    }
-
-    public LocalDate getDeletedAt() {
-        return deletedAt;
-    }
-
-    public void setDeletedAt(LocalDate deletedAt) {
-        this.deletedAt = deletedAt;
-    }
 
 }
