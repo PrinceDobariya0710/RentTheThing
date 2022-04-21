@@ -15,8 +15,8 @@ public class Product {
 
     @ManyToOne
    // @JsonManagedReference
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private UserCredentials userCredentials;
+    @JoinColumn(name = "user_details_id", referencedColumnName = "user_details_id")
+    private UserDetails userDetailsId;
 
     @Column(name = "product_name" )
     private String productName;
@@ -48,9 +48,5 @@ public class Product {
     //@JsonManagedReference
     @JoinColumn(name = "productDurationRate_id", referencedColumnName = "id")
     private ProductDurationRate productDurationRates;
-
-   /* @OneToMany(mappedBy = "product")
-    @JsonBackReference
-    private Set<ProductDetail> productsDetail;*/
 
 }
